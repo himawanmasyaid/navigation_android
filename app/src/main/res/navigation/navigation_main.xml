@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.himawanmasyaid.navigationandroid.view.SplashFragment"
+        android:label="Game"
+        tools:layout="@layout/fragment_splash"
+        >
+
+        <!--
+            clear navigation stack
+                app:popUpToInclusive="true"
+                app:popUpTo="@id/navigation_main"
+         -->
+
+        <action
+            android:id="@+id/action_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/navigation_main"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.himawanmasyaid.navigationandroid.view.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home"
+        >
+
+        <action
+            android:id="@+id/action_to_detailFragment"
+            app:destination="@id/detailFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.himawanmasyaid.navigationandroid.view.DetailFragment"
+        android:label="Detail"
+        tools:layout="@layout/fragment_detail"
+        >
+
+        <!--
+            handle back navigation
+                app:popUpToInclusive="true"
+                app:popUpTo="@id/navigation_main"
+         -->
+
+        <action
+            android:id="@+id/action_to_successFragment"
+            app:destination="@id/successFragment"
+            app:popUpTo="@id/homeFragment"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/successFragment"
+        android:name="com.himawanmasyaid.navigationandroid.view.SuccessFragment"
+        android:label="Success"
+        tools:layout="@layout/fragment_success"
+        >
+
+        <action
+            android:id="@+id/action_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/navigation_main"
+            />
+
+    </fragment>
+
+</navigation>
