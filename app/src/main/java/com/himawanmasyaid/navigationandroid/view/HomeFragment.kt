@@ -18,6 +18,10 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infla
             findNavController().navigate(HomeFragmentDirections.actionToDetailFragment())
         }
 
+        binding.tvSample.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionToSampleActivity())
+        }
+
     }
 
 }

@@ -21,9 +21,10 @@
         <action
             android:id="@+id/action_to_homeFragment"
             app:destination="@id/homeFragment"
-            app:popUpToInclusive="true"
+            app:enterAnim="@anim/enter_from_right"
+            app:popEnterAnim="@anim/enter_from_left"
             app:popUpTo="@id/navigation_main"
-            />
+            app:popUpToInclusive="true" />
 
     </fragment>
 
@@ -36,7 +37,19 @@
 
         <action
             android:id="@+id/action_to_detailFragment"
-            app:destination="@id/detailFragment" />
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
+            />
+
+        <action
+            android:id="@+id/action_to_sampleActivity"
+            app:destination="@id/sampleActivity"
+            app:enterAnim="@anim/enter_from_right"
+            app:popEnterAnim="@anim/enter_from_left"
+            />
 
     </fragment>
 
@@ -57,6 +70,7 @@
             android:id="@+id/action_to_successFragment"
             app:destination="@id/successFragment"
             app:popUpTo="@id/homeFragment"
+            app:enterAnim="@anim/enter_from_right"
             />
 
     </fragment>
@@ -76,5 +90,15 @@
             />
 
     </fragment>
+
+    <activity
+        android:id="@+id/sampleActivity"
+        android:name="com.himawanmasyaid.navigationandroid.view.SampleActivity"
+        android:label="Sample Activity"
+        tools:layout="@layout/activity_sample">
+
+
+    </activity>
+
 
 </navigation>
